@@ -1,0 +1,36 @@
+SOFTWARE UTILIZADO NO CURSO MCC:
+-------------
+MPLAB X (3.X)
+XC8 (1.35)
+MCC (2.5) -> instalar via MPLAB
+--------------
+
+HARDWARE: 
+
+EASYPIC V7 PIC18F45K22
+PICKIT 3 (Gravador da Microchip)
+Termite http://www.compuphase.com/
+
+-------------------
+
+1° DESAFIO: 
+---------------------------
+Vou Solicitar um desafio para o sr: 
+
+Crie um projeto usando duas teclas 
+responsável em ligar/desligar um LED. Para isso 
+você deverá usar o MCC. 
+
+Vamos lá pessoal?!
+ 
+
+
+
+
+
+
+
+
+
+
+

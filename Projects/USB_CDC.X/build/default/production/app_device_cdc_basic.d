@@ -1,0 +1,1 @@
+ build/default/production/app_device_cdc_basic.d  build/default/production/app_device_cdc_basic.p1:  app_device_cdc_basic.c app_device_cdc_basic.h usb_ch9.h usb_config.h usb_device_cdc.h usb.h usb_hal_pic18.h usb_common.h usb_hal.h system.h system_config.h usb_device.h

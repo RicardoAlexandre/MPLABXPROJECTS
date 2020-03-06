@@ -1,0 +1,1305 @@
+
+
+Microchip Technology PIC18 PRO Macro Assembler V1.35 build -356382666 
+                                                                                               Sat Jan 30 15:56:09 2016
+
+Microchip Technology Omniscient Code Generator v1.35 (PRO mode) build 201507080246
+     1                           	processor	18F45K22
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	pm
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    18                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    19                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    20  0000                     _ANSELA	set	3896
+    21  0000                     _ANSELB	set	3897
+    22  0000                     _ANSELC	set	3898
+    23  0000                     _ANSELD	set	3899
+    24  0000                     _ANSELE	set	3900
+    25  0000                     _EECON1bits	set	4006
+    26  0000                     _EECON2	set	4007
+    27  0000                     _INTCON2bits	set	4081
+    28  0000                     _INTCONbits	set	4082
+    29  0000                     _LATA	set	3977
+    30  0000                     _LATB	set	3978
+    31  0000                     _LATC	set	3979
+    32  0000                     _LATD	set	3980
+    33  0000                     _LATE	set	3981
+    34  0000                     _OSCCON	set	4051
+    35  0000                     _OSCCON2	set	4050
+    36  0000                     _OSCTUNE	set	3995
+    37  0000                     _PORTBbits	set	3969
+    38  0000                     _PORTDbits	set	3971
+    39  0000                     _TABLAT	set	4085
+    40  0000                     _TBLPTRH	set	4087
+    41  0000                     _TBLPTRL	set	4086
+    42  0000                     _TBLPTRU	set	4088
+    43  0000                     _TRISA	set	3986
+    44  0000                     _TRISB	set	3987
+    45  0000                     _TRISC	set	3988
+    46  0000                     _TRISD	set	3989
+    47  0000                     _TRISE	set	3990
+    48  0000                     _WPUB	set	3937
+    49  0000                     _LATD0	set	31840
+    50                           
+    51                           ; #config settings
+    52  0000                     
+    53                           	psect	cinit
+    54  007DDA                     __pcinit:
+    55                           	opt stack 0
+    56  007DDA                     start_initialization:
+    57                           	opt stack 0
+    58  007DDA                     __initialization:
+    59                           	opt stack 0
+    60                           
+    61                           ; Clear objects allocated to BANK0 (1 bytes)
+    62  007DDA  0100               	movlb	0
+    63  007DDC  6BA4               	clrf	__pbssBANK0& (0+255),b
+    64  007DDE                     end_of_initialization:
+    65                           	opt stack 0
+    66  007DDE                     __end_of__initialization:
+    67                           	opt stack 0
+    68  007DDE  0100               	movlb	0
+    69  007DE0  EF78  F03F         	goto	_main	;jump to C main() function
+    70                           
+    71                           	psect	bssBANK0
+    72  0000A4                     __pbssBANK0:
+    73                           	opt stack 0
+    74  0000A4                     _flag:
+    75                           	opt stack 0
+    76  0000A4                     	ds	1
+    77                           
+    78                           	psect	cstackBANK0
+    79  000060                     __pcstackBANK0:
+    80                           	opt stack 0
+    81  000060                     main@Buf:
+    82                           	opt stack 0
+    83                           
+    84                           ; 64 bytes @ 0x0
+    85  000060                     	ds	64
+    86  0000A0                     main@flashAddr:
+    87                           	opt stack 0
+    88                           
+    89                           ; 4 bytes @ 0x40
+    90  0000A0                     	ds	4
+    91                           
+    92                           	psect	cstackCOMRAM
+    93  000001                     __pcstackCOMRAM:
+    94                           	opt stack 0
+    95  000001                     ??_delayMs:
+    96  000001                     FLASH_ReadByte@flashAddr:
+    97                           	opt stack 0
+    98  000001                     FLASH_EraseBlock@baseAddr:
+    99                           	opt stack 0
+   100                           
+   101                           ; 4 bytes @ 0x0
+   102  000001                     	ds	1
+   103  000002                     delayMs@time:
+   104                           	opt stack 0
+   105                           
+   106                           ; 1 bytes @ 0x1
+   107  000002                     	ds	1
+   108  000003                     delayMs@i:
+   109                           	opt stack 0
+   110                           
+   111                           ; 1 bytes @ 0x2
+   112  000003                     	ds	2
+   113  000005                     FLASH_EraseBlock@GIEBitValue:
+   114                           	opt stack 0
+   115                           
+   116                           ; 1 bytes @ 0x4
+   117  000005                     	ds	1
+   118  000006                     FLASH_WriteBlock@writeAddr:
+   119                           	opt stack 0
+   120                           
+   121                           ; 4 bytes @ 0x5
+   122  000006                     	ds	4
+   123  00000A                     FLASH_WriteBlock@flashWrBufPtr:
+   124                           	opt stack 0
+   125                           
+   126                           ; 1 bytes @ 0x9
+   127  00000A                     	ds	1
+   128  00000B                     FLASH_WriteBlock@blockStartAddr:
+   129                           	opt stack 0
+   130                           
+   131                           ; 4 bytes @ 0xA
+   132  00000B                     	ds	4
+   133  00000F                     FLASH_WriteBlock@GIEBitValue:
+   134                           	opt stack 0
+   135                           
+   136                           ; 1 bytes @ 0xE
+   137  00000F                     	ds	1
+   138  000010                     FLASH_WriteBlock@i:
+   139                           	opt stack 0
+   140                           
+   141                           ; 1 bytes @ 0xF
+   142  000010                     	ds	1
+   143  000011                     FLASH_WriteByte@flashAddr:
+   144                           	opt stack 0
+   145                           
+   146                           ; 4 bytes @ 0x10
+   147  000011                     	ds	4
+   148  000015                     FLASH_WriteByte@flashRdBufPtr:
+   149                           	opt stack 0
+   150                           
+   151                           ; 1 bytes @ 0x14
+   152  000015                     	ds	1
+   153  000016                     FLASH_WriteByte@byte:
+   154                           	opt stack 0
+   155                           
+   156                           ; 1 bytes @ 0x15
+   157  000016                     	ds	1
+   158  000017                     FLASH_WriteByte@offset:
+   159                           	opt stack 0
+   160                           
+   161                           ; 1 bytes @ 0x16
+   162  000017                     	ds	1
+   163  000018                     FLASH_WriteByte@blockStartAddr:
+   164                           	opt stack 0
+   165                           
+   166                           ; 4 bytes @ 0x17
+   167  000018                     	ds	4
+   168  00001C                     FLASH_WriteByte@i:
+   169                           	opt stack 0
+   170                           
+   171                           ; 1 bytes @ 0x1B
+   172  00001C                     	ds	1
+   173  00001D                     ??_main:
+   174                           
+   175                           ; 0 bytes @ 0x1C
+   176  00001D                     	ds	1
+   177                           
+   178 ;;
+   179 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   180 ;;
+   181 ;; *************** function _main *****************
+   182 ;; Defined at:
+   183 ;;		line 55 in file "main.c"
+   184 ;; Parameters:    Size  Location     Type
+   185 ;;		None
+   186 ;; Auto vars:     Size  Location     Type
+   187 ;;  Buf            64    0[BANK0 ] unsigned char [64]
+   188 ;;  flashAddr       4   64[BANK0 ] unsigned long 
+   189 ;;  writeData       1    0        unsigned char 
+   190 ;; Return value:  Size  Location     Type
+   191 ;;		None               void
+   192 ;; Registers used:
+   193 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   194 ;; Tracked objects:
+   195 ;;		On entry : 0/0
+   196 ;;		On exit  : 0/0
+   197 ;;		Unchanged: 0/0
+   198 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   199 ;;      Params:         0       0       0       0       0       0       0
+   200 ;;      Locals:         0      68       0       0       0       0       0
+   201 ;;      Temps:          1       0       0       0       0       0       0
+   202 ;;      Totals:         1      68       0       0       0       0       0
+   203 ;;Total ram usage:       69 bytes
+   204 ;; Hardware stack levels required when called:    3
+   205 ;; This function calls:
+   206 ;;		_FLASH_ReadByte
+   207 ;;		_FLASH_WriteByte
+   208 ;;		_SYSTEM_Initialize
+   209 ;;		_delayMs
+   210 ;; This function is called by:
+   211 ;;		Startup code after reset
+   212 ;; This function uses a non-reentrant model
+   213 ;;
+   214                           
+   215                           	psect	text0
+   216  007EF0                     __ptext0:
+   217                           	opt stack 0
+   218  007EF0                     _main:
+   219                           	opt stack 28
+   220                           
+   221                           ;main.c: 88: uint8_t writeData = 0xAA;
+   222                           
+   223                           ;incstack = 0
+   224  007EF0  ECE9  F03E         	call	_SYSTEM_Initialize	;wreg free
+   225                           
+   226                           ; BSR set to: 15
+   227                           ;main.c: 89: uint32_t flashAddr = 0x7D00;
+   228  007EF4  0100               	movlb	0	; () banked
+   229  007EF6  6BA0               	clrf	main@flashAddr& (0+255),b
+   230  007EF8  0E7D               	movlw	125
+   231  007EFA  6FA1               	movwf	(main@flashAddr+1)& (0+255),b
+   232  007EFC  6BA2               	clrf	(main@flashAddr+2)& (0+255),b
+   233  007EFE  6BA3               	clrf	(main@flashAddr+3)& (0+255),b
+   234                           
+   235                           ; BSR set to: 0
+   236                           ;main.c: 90: uint8_t Buf[64];
+   237                           ;main.c: 93: LATD0 = FLASH_ReadByte(flashAddr);
+   238  007F00  6A01               	clrf	FLASH_ReadByte@flashAddr,c
+   239  007F02  6E02               	movwf	FLASH_ReadByte@flashAddr+1,c
+   240  007F04  6A03               	clrf	FLASH_ReadByte@flashAddr+2,c
+   241  007F06  6A04               	clrf	FLASH_ReadByte@flashAddr+3,c
+   242  007F08  ECF8  F03E         	call	_FLASH_ReadByte	;wreg free
+   243  007F0C  6E1D               	movwf	??_main& (0+255),c
+   244  007F0E  301D               	rrcf	??_main,w,c
+   245  007F10  E302               	bnc	u230
+   246  007F12  808C               	bsf	3980,0,c	;volatile
+   247  007F14  D001               	goto	l1024
+   248  007F16                     u230:
+   249  007F16  908C               	bcf	3980,0,c	;volatile
+   250  007F18                     l1024:
+   251                           
+   252                           ;main.c: 100: if(PORTBbits.RB0 == 0 && flag == 0)
+   253  007F18  B081               	btfsc	3969,0,c	;volatile
+   254  007F1A  D01E               	goto	l1034
+   255  007F1C  0100               	movlb	0	; () banked
+   256  007F1E  51A4               	movf	_flag& (0+255),w,b
+   257  007F20  E11B               	bnz	l1034
+   258                           
+   259                           ; BSR set to: 0
+   260                           
+   261                           ;main.c: 101: {
+   262                           ;main.c: 103: do { LATD0 = ~LATD0; } while(0);
+   263  007F22  B08C               	btfsc	3980,0,c	;volatile
+   264  007F24  D002               	goto	u270
+   265  007F26  808C               	bsf	3980,0,c	;volatile
+   266  007F28  D001               	goto	l1028
+   267  007F2A                     u270:
+   268  007F2A  908C               	bcf	3980,0,c	;volatile
+   269  007F2C                     l1028:
+   270                           
+   271                           ;main.c: 105: FLASH_WriteByte(flashAddr, Buf, PORTDbits.RD0);
+   272  007F2C  C0A0  F011         	movff	main@flashAddr,FLASH_WriteByte@flashAddr
+   273  007F30  C0A1  F012         	movff	main@flashAddr+1,FLASH_WriteByte@flashAddr+1
+   274  007F34  C0A2  F013         	movff	main@flashAddr+2,FLASH_WriteByte@flashAddr+2
+   275  007F38  C0A3  F014         	movff	main@flashAddr+3,FLASH_WriteByte@flashAddr+3
+   276  007F3C  0E60               	movlw	low main@Buf
+   277  007F3E  6E15               	movwf	FLASH_WriteByte@flashRdBufPtr,c
+   278  007F40  0E00               	movlw	0
+   279  007F42  B083               	btfsc	3971,0,c	;volatile
+   280  007F44  0E01               	movlw	1
+   281  007F46  6E16               	movwf	FLASH_WriteByte@byte,c
+   282  007F48  EC43  F03F         	call	_FLASH_WriteByte	;wreg free
+   283                           
+   284                           ;main.c: 108: flag = 1;
+   285  007F4C  0E01               	movlw	1
+   286  007F4E  0100               	movlb	0	; () banked
+   287  007F50  6FA4               	movwf	_flag& (0+255),b
+   288                           
+   289                           ; BSR set to: 0
+   290                           ;main.c: 109: delayMs(100);
+   291  007F52  0E64               	movlw	100
+   292  007F54  EC01  F03F         	call	_delayMs
+   293  007F58                     l1034:
+   294                           
+   295                           ;main.c: 111: }
+   296                           ;main.c: 112: if(PORTBbits.RB0 == 1 && flag == 1)
+   297  007F58  A081               	btfss	3969,0,c	;volatile
+   298  007F5A  D7DE               	goto	l1024
+   299  007F5C  0100               	movlb	0	; () banked
+   300  007F5E  05A4               	decf	_flag& (0+255),w,b
+   301  007F60  E1DB               	bnz	l1024
+   302                           
+   303                           ; BSR set to: 0
+   304                           ;main.c: 113: {
+   305                           ;main.c: 115: flag = 0;
+   306  007F62  6BA4               	clrf	_flag& (0+255),b
+   307                           
+   308                           ; BSR set to: 0
+   309                           ;main.c: 116: delayMs(100);
+   310  007F64  0E64               	movlw	100
+   311  007F66  EC01  F03F         	call	_delayMs
+   312  007F6A  D7D6               	goto	l1024
+   313  007F6C                     __end_of_main:
+   314                           	opt stack 0
+   315                           
+   316 ;; *************** function _delayMs *****************
+   317 ;; Defined at:
+   318 ;;		line 122 in file "main.c"
+   319 ;; Parameters:    Size  Location     Type
+   320 ;;  time            1    wreg     unsigned char 
+   321 ;; Auto vars:     Size  Location     Type
+   322 ;;  time            1    1[COMRAM] unsigned char 
+   323 ;;  i               1    2[COMRAM] unsigned char 
+   324 ;; Return value:  Size  Location     Type
+   325 ;;		None               void
+   326 ;; Registers used:
+   327 ;;		wreg, status,2, status,0
+   328 ;; Tracked objects:
+   329 ;;		On entry : F/0
+   330 ;;		On exit  : 0/0
+   331 ;;		Unchanged: 0/0
+   332 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   333 ;;      Params:         0       0       0       0       0       0       0
+   334 ;;      Locals:         2       0       0       0       0       0       0
+   335 ;;      Temps:          1       0       0       0       0       0       0
+   336 ;;      Totals:         3       0       0       0       0       0       0
+   337 ;;Total ram usage:        3 bytes
+   338 ;; Hardware stack levels used:    1
+   339 ;; This function calls:
+   340 ;;		Nothing
+   341 ;; This function is called by:
+   342 ;;		_main
+   343 ;; This function uses a non-reentrant model
+   344 ;;
+   345                           
+   346                           	psect	text1
+   347  007E02                     __ptext1:
+   348                           	opt stack 0
+   349  007E02                     _delayMs:
+   350                           	opt stack 30
+   351                           
+   352                           ;incstack = 0
+   353                           ;delayMs@time stored from wreg
+   354  007E02  6E02               	movwf	delayMs@time,c
+   355                           
+   356                           ;main.c: 124: for(uint8_t i = 0; i < time ; ++i)
+   357  007E04  6A03               	clrf	delayMs@i,c
+   358  007E06  D008               	goto	l1016
+   359  007E08                     l1012:
+   360                           
+   361                           ;main.c: 125: {
+   362                           ;main.c: 126: _delay((unsigned long)((1)*(8000000/4000.0)));
+   363  007E08  0E03               	movlw	3
+   364  007E0A  6E01               	movwf	??_delayMs& (0+255),c
+   365  007E0C  0E98               	movlw	152
+   366  007E0E                     u317:
+   367  007E0E  2EE8               	decfsz	wreg,f,c
+   368  007E10  D7FE               	goto	u317
+   369  007E12  2E01               	decfsz	??_delayMs& (0+255),f,c
+   370  007E14  D7FC               	goto	u317
+   371  007E16  2A03               	incf	delayMs@i,f,c
+   372  007E18                     l1016:
+   373  007E18  5002               	movf	delayMs@time,w,c
+   374  007E1A  5C03               	subwf	delayMs@i,w,c
+   375  007E1C  E3F5               	bnc	l1012
+   376  007E1E  0012               	return		;funcret
+   377  007E20                     __end_of_delayMs:
+   378                           	opt stack 0
+   379                           wreg	equ	0xFE8
+   380                           
+   381 ;; *************** function _SYSTEM_Initialize *****************
+   382 ;; Defined at:
+   383 ;;		line 112 in file "mcc_generated_files/mcc.c"
+   384 ;; Parameters:    Size  Location     Type
+   385 ;;		None
+   386 ;; Auto vars:     Size  Location     Type
+   387 ;;		None
+   388 ;; Return value:  Size  Location     Type
+   389 ;;		None               void
+   390 ;; Registers used:
+   391 ;;		wreg, status,2, cstack
+   392 ;; Tracked objects:
+   393 ;;		On entry : 0/0
+   394 ;;		On exit  : F/F
+   395 ;;		Unchanged: 0/0
+   396 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   397 ;;      Params:         0       0       0       0       0       0       0
+   398 ;;      Locals:         0       0       0       0       0       0       0
+   399 ;;      Temps:          0       0       0       0       0       0       0
+   400 ;;      Totals:         0       0       0       0       0       0       0
+   401 ;;Total ram usage:        0 bytes
+   402 ;; Hardware stack levels used:    1
+   403 ;; Hardware stack levels required when called:    1
+   404 ;; This function calls:
+   405 ;;		_OSCILLATOR_Initialize
+   406 ;;		_PIN_MANAGER_Initialize
+   407 ;; This function is called by:
+   408 ;;		_main
+   409 ;; This function uses a non-reentrant model
+   410 ;;
+   411                           
+   412                           	psect	text2
+   413  007DD2                     __ptext2:
+   414                           	opt stack 0
+   415  007DD2                     _SYSTEM_Initialize:
+   416                           	opt stack 29
+   417                           
+   418                           ;mcc.c: 113: OSCILLATOR_Initialize();
+   419                           
+   420                           ;incstack = 0
+   421  007DD2  ECF2  F03E         	call	_OSCILLATOR_Initialize	;wreg free
+   422                           
+   423                           ;mcc.c: 114: PIN_MANAGER_Initialize();
+   424  007DD6  EF10  F03F         	goto	_PIN_MANAGER_Initialize	;wreg free
+   425  007DDA                     __end_of_SYSTEM_Initialize:
+   426                           	opt stack 0
+   427                           wreg	equ	0xFE8
+   428                           
+   429 ;; *************** function _PIN_MANAGER_Initialize *****************
+   430 ;; Defined at:
+   431 ;;		line 50 in file "mcc_generated_files/pin_manager.c"
+   432 ;; Parameters:    Size  Location     Type
+   433 ;;		None
+   434 ;; Auto vars:     Size  Location     Type
+   435 ;;		None
+   436 ;; Return value:  Size  Location     Type
+   437 ;;		None               void
+   438 ;; Registers used:
+   439 ;;		wreg, status,2
+   440 ;; Tracked objects:
+   441 ;;		On entry : 0/0
+   442 ;;		On exit  : F/F
+   443 ;;		Unchanged: 0/0
+   444 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   445 ;;      Params:         0       0       0       0       0       0       0
+   446 ;;      Locals:         0       0       0       0       0       0       0
+   447 ;;      Temps:          0       0       0       0       0       0       0
+   448 ;;      Totals:         0       0       0       0       0       0       0
+   449 ;;Total ram usage:        0 bytes
+   450 ;; Hardware stack levels used:    1
+   451 ;; This function calls:
+   452 ;;		Nothing
+   453 ;; This function is called by:
+   454 ;;		_SYSTEM_Initialize
+   455 ;; This function uses a non-reentrant model
+   456 ;;
+   457                           
+   458                           	psect	text3
+   459  007E20                     __ptext3:
+   460                           	opt stack 0
+   461  007E20                     _PIN_MANAGER_Initialize:
+   462                           	opt stack 29
+   463                           
+   464                           ;pin_manager.c: 51: LATA = 0x00;
+   465                           
+   466                           ; BSR set to: 15
+   467                           ;incstack = 0
+   468  007E20  6A89               	clrf	3977,c	;volatile
+   469                           
+   470                           ;pin_manager.c: 52: TRISA = 0xFF;
+   471  007E22  6892               	setf	3986,c	;volatile
+   472                           
+   473                           ;pin_manager.c: 53: ANSELA = 0x2F;
+   474  007E24  0E2F               	movlw	47
+   475  007E26  010F               	movlb	15	; () banked
+   476  007E28  6F38               	movwf	56,b	;volatile
+   477                           
+   478                           ; BSR set to: 15
+   479                           ;pin_manager.c: 55: LATB = 0x00;
+   480  007E2A  6A8A               	clrf	3978,c	;volatile
+   481                           
+   482                           ; BSR set to: 15
+   483                           ;pin_manager.c: 56: TRISB = 0xFF;
+   484  007E2C  6893               	setf	3987,c	;volatile
+   485                           
+   486                           ;pin_manager.c: 57: ANSELB = 0x3E;
+   487  007E2E  0E3E               	movlw	62
+   488  007E30  6F39               	movwf	57,b	;volatile
+   489                           
+   490                           ;pin_manager.c: 58: WPUB = 0x01;
+   491  007E32  0E01               	movlw	1
+   492  007E34  6E61               	movwf	3937,c	;volatile
+   493                           
+   494                           ; BSR set to: 15
+   495                           ;pin_manager.c: 60: LATC = 0x00;
+   496  007E36  6A8B               	clrf	3979,c	;volatile
+   497                           
+   498                           ; BSR set to: 15
+   499                           ;pin_manager.c: 61: TRISC = 0xFF;
+   500  007E38  6894               	setf	3988,c	;volatile
+   501                           
+   502                           ;pin_manager.c: 62: ANSELC = 0xFC;
+   503  007E3A  0EFC               	movlw	252
+   504  007E3C  6F3A               	movwf	58,b	;volatile
+   505                           
+   506                           ; BSR set to: 15
+   507                           ;pin_manager.c: 64: LATD = 0x00;
+   508  007E3E  6A8C               	clrf	3980,c	;volatile
+   509                           
+   510                           ;pin_manager.c: 65: TRISD = 0xFE;
+   511  007E40  0EFE               	movlw	254
+   512  007E42  6E95               	movwf	3989,c	;volatile
+   513                           
+   514                           ;pin_manager.c: 66: ANSELD = 0xFE;
+   515  007E44  6F3B               	movwf	59,b	;volatile
+   516                           
+   517                           ; BSR set to: 15
+   518                           ;pin_manager.c: 68: LATE = 0x00;
+   519  007E46  6A8D               	clrf	3981,c	;volatile
+   520                           
+   521                           ;pin_manager.c: 69: TRISE = 0x07;
+   522  007E48  0E07               	movlw	7
+   523  007E4A  6E96               	movwf	3990,c	;volatile
+   524                           
+   525                           ;pin_manager.c: 70: ANSELE = 0x07;
+   526  007E4C  6F3C               	movwf	60,b	;volatile
+   527                           
+   528                           ; BSR set to: 15
+   529                           ;pin_manager.c: 72: INTCON2bits.nRBPU = 0x00;
+   530  007E4E  9EF1               	bcf	intcon2,7,c	;volatile
+   531                           
+   532                           ; BSR set to: 15
+   533  007E50  0C07               	retlw	7	;funcret
+   534  007E52                     __end_of_PIN_MANAGER_Initialize:
+   535                           	opt stack 0
+   536                           intcon2	equ	0xFF1
+   537                           wreg	equ	0xFE8
+   538                           
+   539 ;; *************** function _OSCILLATOR_Initialize *****************
+   540 ;; Defined at:
+   541 ;;		line 117 in file "mcc_generated_files/mcc.c"
+   542 ;; Parameters:    Size  Location     Type
+   543 ;;		None
+   544 ;; Auto vars:     Size  Location     Type
+   545 ;;		None
+   546 ;; Return value:  Size  Location     Type
+   547 ;;		None               void
+   548 ;; Registers used:
+   549 ;;		wreg, status,2
+   550 ;; Tracked objects:
+   551 ;;		On entry : 0/0
+   552 ;;		On exit  : 0/0
+   553 ;;		Unchanged: 0/0
+   554 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   555 ;;      Params:         0       0       0       0       0       0       0
+   556 ;;      Locals:         0       0       0       0       0       0       0
+   557 ;;      Temps:          0       0       0       0       0       0       0
+   558 ;;      Totals:         0       0       0       0       0       0       0
+   559 ;;Total ram usage:        0 bytes
+   560 ;; Hardware stack levels used:    1
+   561 ;; This function calls:
+   562 ;;		Nothing
+   563 ;; This function is called by:
+   564 ;;		_SYSTEM_Initialize
+   565 ;; This function uses a non-reentrant model
+   566 ;;
+   567                           
+   568                           	psect	text4
+   569  007DE4                     __ptext4:
+   570                           	opt stack 0
+   571  007DE4                     _OSCILLATOR_Initialize:
+   572                           	opt stack 29
+   573                           
+   574                           ;mcc.c: 119: OSCCON = 0x30;
+   575                           
+   576                           ; BSR set to: 15
+   577                           ;incstack = 0
+   578  007DE4  0E30               	movlw	48
+   579  007DE6  6ED3               	movwf	4051,c	;volatile
+   580                           
+   581                           ;mcc.c: 121: OSCCON2 = 0x04;
+   582  007DE8  0E04               	movlw	4
+   583  007DEA  6ED2               	movwf	4050,c	;volatile
+   584                           
+   585                           ;mcc.c: 123: OSCTUNE = 0x00;
+   586  007DEC  6A9B               	clrf	3995,c	;volatile
+   587  007DEE  0012               	return		;funcret
+   588  007DF0                     __end_of_OSCILLATOR_Initialize:
+   589                           	opt stack 0
+   590                           intcon2	equ	0xFF1
+   591                           wreg	equ	0xFE8
+   592                           
+   593 ;; *************** function _FLASH_WriteByte *****************
+   594 ;; Defined at:
+   595 ;;		line 72 in file "mcc_generated_files/memory.c"
+   596 ;; Parameters:    Size  Location     Type
+   597 ;;  flashAddr       4   16[COMRAM] unsigned long 
+   598 ;;  flashRdBufPt    1   20[COMRAM] PTR unsigned char 
+   599 ;;		 -> main@Buf(64), 
+   600 ;;  byte            1   21[COMRAM] unsigned char 
+   601 ;; Auto vars:     Size  Location     Type
+   602 ;;  blockStartAd    4   23[COMRAM] unsigned long 
+   603 ;;  i               1   27[COMRAM] unsigned char 
+   604 ;;  offset          1   22[COMRAM] unsigned char 
+   605 ;; Return value:  Size  Location     Type
+   606 ;;		None               void
+   607 ;; Registers used:
+   608 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   609 ;; Tracked objects:
+   610 ;;		On entry : 0/0
+   611 ;;		On exit  : 0/0
+   612 ;;		Unchanged: 0/0
+   613 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   614 ;;      Params:         6       0       0       0       0       0       0
+   615 ;;      Locals:         6       0       0       0       0       0       0
+   616 ;;      Temps:          0       0       0       0       0       0       0
+   617 ;;      Totals:        12       0       0       0       0       0       0
+   618 ;;Total ram usage:       12 bytes
+   619 ;; Hardware stack levels used:    1
+   620 ;; Hardware stack levels required when called:    2
+   621 ;; This function calls:
+   622 ;;		_FLASH_ReadByte
+   623 ;;		_FLASH_WriteBlock
+   624 ;; This function is called by:
+   625 ;;		_main
+   626 ;; This function uses a non-reentrant model
+   627 ;;
+   628                           
+   629                           	psect	text5
+   630  007E86                     __ptext5:
+   631                           	opt stack 0
+   632  007E86                     _FLASH_WriteByte:
+   633                           	opt stack 28
+   634                           
+   635                           ;memory.c: 73: uint32_t blockStartAddr = (uint32_t) (flashAddr & ((32768 - 1) ^ (64 - 1)
+      +                          ));
+   636                           
+   637                           ;incstack = 0
+   638  007E86  0EC0               	movlw	192
+   639  007E88  1411               	andwf	FLASH_WriteByte@flashAddr,w,c
+   640  007E8A  6E18               	movwf	FLASH_WriteByte@blockStartAddr,c
+   641  007E8C  0E7F               	movlw	127
+   642  007E8E  1412               	andwf	FLASH_WriteByte@flashAddr+1,w,c
+   643  007E90  6E19               	movwf	FLASH_WriteByte@blockStartAddr+1,c
+   644  007E92  6A1A               	clrf	FLASH_WriteByte@blockStartAddr+2,c
+   645  007E94  6A1B               	clrf	FLASH_WriteByte@blockStartAddr+3,c
+   646                           
+   647                           ;memory.c: 74: uint8_t offset = (uint8_t) (flashAddr & (64 - 1));
+   648  007E96  5011               	movf	FLASH_WriteByte@flashAddr,w,c
+   649  007E98  0B3F               	andlw	63
+   650  007E9A  6E17               	movwf	FLASH_WriteByte@offset,c
+   651                           
+   652                           ;memory.c: 75: uint8_t i;
+   653                           ;memory.c: 78: for (i = 0; i < 64; i++) {
+   654  007E9C  6A1C               	clrf	FLASH_WriteByte@i,c
+   655  007E9E                     l1000:
+   656                           
+   657                           ;memory.c: 79: flashRdBufPtr[i] = FLASH_ReadByte((blockStartAddr + i));
+   658  007E9E  5015               	movf	FLASH_WriteByte@flashRdBufPtr,w,c
+   659  007EA0  241C               	addwf	FLASH_WriteByte@i,w,c
+   660  007EA2  6ED9               	movwf	fsr2l,c
+   661  007EA4  6ADA               	clrf	fsr2h,c
+   662  007EA6  501C               	movf	FLASH_WriteByte@i,w,c
+   663  007EA8  2418               	addwf	FLASH_WriteByte@blockStartAddr,w,c
+   664  007EAA  6E01               	movwf	FLASH_ReadByte@flashAddr,c
+   665  007EAC  0E00               	movlw	0
+   666  007EAE  2019               	addwfc	FLASH_WriteByte@blockStartAddr+1,w,c
+   667  007EB0  6E02               	movwf	FLASH_ReadByte@flashAddr+1,c
+   668  007EB2  0E00               	movlw	0
+   669  007EB4  201A               	addwfc	FLASH_WriteByte@blockStartAddr+2,w,c
+   670  007EB6  6E03               	movwf	FLASH_ReadByte@flashAddr+2,c
+   671  007EB8  0E00               	movlw	0
+   672  007EBA  201B               	addwfc	FLASH_WriteByte@blockStartAddr+3,w,c
+   673  007EBC  6E04               	movwf	FLASH_ReadByte@flashAddr+3,c
+   674  007EBE  ECF8  F03E         	call	_FLASH_ReadByte	;wreg free
+   675  007EC2  6EDF               	movwf	indf2,c
+   676  007EC4  2A1C               	incf	FLASH_WriteByte@i,f,c
+   677  007EC6  0E3F               	movlw	63
+   678  007EC8  641C               	cpfsgt	FLASH_WriteByte@i,c
+   679  007ECA  D7E9               	goto	l1000
+   680                           
+   681                           ;memory.c: 80: }
+   682                           ;memory.c: 83: flashRdBufPtr[offset] = byte;
+   683  007ECC  5015               	movf	FLASH_WriteByte@flashRdBufPtr,w,c
+   684  007ECE  2417               	addwf	FLASH_WriteByte@offset,w,c
+   685  007ED0  6ED9               	movwf	fsr2l,c
+   686  007ED2  6ADA               	clrf	fsr2h,c
+   687  007ED4  C016  FFDF         	movff	FLASH_WriteByte@byte,indf2
+   688                           
+   689                           ;memory.c: 86: FLASH_WriteBlock(blockStartAddr, flashRdBufPtr);
+   690  007ED8  C018  F006         	movff	FLASH_WriteByte@blockStartAddr,FLASH_WriteBlock@writeAddr
+   691  007EDC  C019  F007         	movff	FLASH_WriteByte@blockStartAddr+1,FLASH_WriteBlock@writeAddr+1
+   692  007EE0  C01A  F008         	movff	FLASH_WriteByte@blockStartAddr+2,FLASH_WriteBlock@writeAddr+2
+   693  007EE4  C01B  F009         	movff	FLASH_WriteByte@blockStartAddr+3,FLASH_WriteBlock@writeAddr+3
+   694  007EE8  C015  F00A         	movff	FLASH_WriteByte@flashRdBufPtr,FLASH_WriteBlock@flashWrBufPtr
+   695  007EEC  EFB6  F03F         	goto	_FLASH_WriteBlock	;wreg free
+   696  007EF0                     __end_of_FLASH_WriteByte:
+   697                           	opt stack 0
+   698                           intcon2	equ	0xFF1
+   699                           wreg	equ	0xFE8
+   700                           indf2	equ	0xFDF
+   701                           fsr2h	equ	0xFDA
+   702                           fsr2l	equ	0xFD9
+   703                           
+   704 ;; *************** function _FLASH_WriteBlock *****************
+   705 ;; Defined at:
+   706 ;;		line 89 in file "mcc_generated_files/memory.c"
+   707 ;; Parameters:    Size  Location     Type
+   708 ;;  writeAddr       4    5[COMRAM] unsigned long 
+   709 ;;  flashWrBufPt    1    9[COMRAM] PTR unsigned char 
+   710 ;;		 -> main@Buf(64), 
+   711 ;; Auto vars:     Size  Location     Type
+   712 ;;  blockStartAd    4   10[COMRAM] unsigned long 
+   713 ;;  i               1   15[COMRAM] unsigned char 
+   714 ;;  GIEBitValue     1   14[COMRAM] unsigned char 
+   715 ;; Return value:  Size  Location     Type
+   716 ;;                  1    wreg      char 
+   717 ;; Registers used:
+   718 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   719 ;; Tracked objects:
+   720 ;;		On entry : 0/0
+   721 ;;		On exit  : 0/0
+   722 ;;		Unchanged: 0/0
+   723 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   724 ;;      Params:         5       0       0       0       0       0       0
+   725 ;;      Locals:         6       0       0       0       0       0       0
+   726 ;;      Temps:          0       0       0       0       0       0       0
+   727 ;;      Totals:        11       0       0       0       0       0       0
+   728 ;;Total ram usage:       11 bytes
+   729 ;; Hardware stack levels used:    1
+   730 ;; Hardware stack levels required when called:    1
+   731 ;; This function calls:
+   732 ;;		_FLASH_EraseBlock
+   733 ;; This function is called by:
+   734 ;;		_FLASH_WriteByte
+   735 ;; This function uses a non-reentrant model
+   736 ;;
+   737                           
+   738                           	psect	text6
+   739  007F6C                     __ptext6:
+   740                           	opt stack 0
+   741  007F6C                     _FLASH_WriteBlock:
+   742                           	opt stack 28
+   743                           
+   744                           ;memory.c: 90: uint32_t blockStartAddr = (uint32_t) (writeAddr & ((32768 - 1) ^ (64 - 1)
+      +                          ));
+   745                           
+   746                           ;incstack = 0
+   747  007F6C  0EC0               	movlw	192
+   748  007F6E  1406               	andwf	FLASH_WriteBlock@writeAddr,w,c
+   749  007F70  6E0B               	movwf	FLASH_WriteBlock@blockStartAddr,c
+   750  007F72  0E7F               	movlw	127
+   751  007F74  1407               	andwf	FLASH_WriteBlock@writeAddr+1,w,c
+   752  007F76  6E0C               	movwf	FLASH_WriteBlock@blockStartAddr+1,c
+   753  007F78  6A0D               	clrf	FLASH_WriteBlock@blockStartAddr+2,c
+   754  007F7A  6A0E               	clrf	FLASH_WriteBlock@blockStartAddr+3,c
+   755                           
+   756                           ;memory.c: 91: uint8_t GIEBitValue = INTCONbits.GIE;
+   757  007F7C  0E00               	movlw	0
+   758  007F7E  BEF2               	btfsc	intcon,7,c	;volatile
+   759  007F80  0E01               	movlw	1
+   760  007F82  6E0F               	movwf	FLASH_WriteBlock@GIEBitValue,c
+   761                           
+   762                           ;memory.c: 92: uint8_t i;
+   763                           ;memory.c: 95: if (writeAddr != blockStartAddr) {
+   764  007F84  500B               	movf	FLASH_WriteBlock@blockStartAddr,w,c
+   765  007F86  1806               	xorwf	FLASH_WriteBlock@writeAddr,w,c
+   766  007F88  E13A               	bnz	l126
+   767  007F8A  500C               	movf	FLASH_WriteBlock@blockStartAddr+1,w,c
+   768  007F8C  1807               	xorwf	FLASH_WriteBlock@writeAddr+1,w,c
+   769  007F8E  E137               	bnz	l126
+   770  007F90  500D               	movf	FLASH_WriteBlock@blockStartAddr+2,w,c
+   771  007F92  1808               	xorwf	FLASH_WriteBlock@writeAddr+2,w,c
+   772  007F94  E134               	bnz	l126
+   773  007F96  500E               	movf	FLASH_WriteBlock@blockStartAddr+3,w,c
+   774  007F98  1809               	xorwf	FLASH_WriteBlock@writeAddr+3,w,c
+   775  007F9A  E001               	bz	l958
+   776  007F9C  0012               	return	
+   777  007F9E                     l958:
+   778                           
+   779                           ;memory.c: 97: }
+   780                           ;memory.c: 100: FLASH_EraseBlock(writeAddr);
+   781  007F9E  C006  F001         	movff	FLASH_WriteBlock@writeAddr,FLASH_EraseBlock@baseAddr
+   782  007FA2  C007  F002         	movff	FLASH_WriteBlock@writeAddr+1,FLASH_EraseBlock@baseAddr+1
+   783  007FA6  C008  F003         	movff	FLASH_WriteBlock@writeAddr+2,FLASH_EraseBlock@baseAddr+2
+   784  007FAA  C009  F004         	movff	FLASH_WriteBlock@writeAddr+3,FLASH_EraseBlock@baseAddr+3
+   785  007FAE  EC29  F03F         	call	_FLASH_EraseBlock	;wreg free
+   786                           
+   787                           ;memory.c: 103: TBLPTRU = (uint8_t) ((writeAddr & 0x00FF0000) >> 16);
+   788  007FB2  C008  FFF8         	movff	FLASH_WriteBlock@writeAddr+2,tblptru	;volatile
+   789                           
+   790                           ;memory.c: 104: TBLPTRH = (uint8_t) ((writeAddr & 0x0000FF00) >> 8);
+   791  007FB6  C007  FFF7         	movff	FLASH_WriteBlock@writeAddr+1,tblptrh	;volatile
+   792                           
+   793                           ;memory.c: 105: TBLPTRL = (uint8_t) (writeAddr & 0x000000FF);
+   794  007FBA  C006  FFF6         	movff	FLASH_WriteBlock@writeAddr,tblptrl	;volatile
+   795                           
+   796                           ;memory.c: 108: for (i = 0; i < 64; i++) {
+   797  007FBE  6A10               	clrf	FLASH_WriteBlock@i,c
+   798  007FC0                     l972:
+   799                           
+   800                           ;memory.c: 109: TABLAT = flashWrBufPtr[i];
+   801  007FC0  500A               	movf	FLASH_WriteBlock@flashWrBufPtr,w,c
+   802  007FC2  2410               	addwf	FLASH_WriteBlock@i,w,c
+   803  007FC4  6ED9               	movwf	fsr2l,c
+   804  007FC6  6ADA               	clrf	fsr2h,c
+   805  007FC8  50DF               	movf	indf2,w,c
+   806  007FCA  6EF5               	movwf	tablat,c	;volatile
+   807                           
+   808                           ;memory.c: 111: if (i == (64 - 1)) {
+   809  007FCC  0E3F               	movlw	63
+   810  007FCE  1810               	xorwf	FLASH_WriteBlock@i,w,c
+   811  007FD0  E102               	bnz	l129
+   812  007FD2  000C               	tblwt		*	;# 
+   813                           
+   814                           ;memory.c: 113: } else {
+   815  007FD4  D001               	goto	l978
+   816  007FD6                     l129:
+   817  007FD6  000D               	tblwt		*+	;# 
+   818  007FD8                     l978:
+   819  007FD8  2A10               	incf	FLASH_WriteBlock@i,f,c
+   820  007FDA  0E3F               	movlw	63
+   821  007FDC  6410               	cpfsgt	FLASH_WriteBlock@i,c
+   822  007FDE  D7F0               	goto	l972
+   823                           
+   824                           ;memory.c: 115: }
+   825                           ;memory.c: 116: }
+   826                           ;memory.c: 118: EECON1bits.EEPGD = 1;
+   827  007FE0  8EA6               	bsf	4006,7,c	;volatile
+   828                           
+   829                           ;memory.c: 119: EECON1bits.CFGS = 0;
+   830  007FE2  9CA6               	bcf	4006,6,c	;volatile
+   831                           
+   832                           ;memory.c: 120: EECON1bits.WREN = 1;
+   833  007FE4  84A6               	bsf	4006,2,c	;volatile
+   834                           
+   835                           ;memory.c: 121: INTCONbits.GIE = 0;
+   836  007FE6  9EF2               	bcf	intcon,7,c	;volatile
+   837                           
+   838                           ;memory.c: 122: EECON2 = 0x55;
+   839  007FE8  0E55               	movlw	85
+   840  007FEA  6EA7               	movwf	4007,c	;volatile
+   841                           
+   842                           ;memory.c: 123: EECON2 = 0xAA;
+   843  007FEC  0EAA               	movlw	170
+   844  007FEE  6EA7               	movwf	4007,c	;volatile
+   845                           
+   846                           ;memory.c: 124: EECON1bits.WR = 1;
+   847  007FF0  82A6               	bsf	4006,1,c	;volatile
+   848                           
+   849                           ;memory.c: 126: EECON1bits.WREN = 0;
+   850  007FF2  94A6               	bcf	4006,2,c	;volatile
+   851                           
+   852                           ;memory.c: 127: INTCONbits.GIE = GIEBitValue;
+   853  007FF4  B00F               	btfsc	FLASH_WriteBlock@GIEBitValue,0,c
+   854  007FF6  D002               	bra	u205
+   855  007FF8  9EF2               	bcf	intcon,7,c	;volatile
+   856  007FFA  D001               	bra	u206
+   857  007FFC                     u205:
+   858  007FFC  8EF2               	bsf	intcon,7,c	;volatile
+   859  007FFE                     u206:
+   860  007FFE                     l126:
+   861  007FFE  0012               	return		;funcret
+   862  008000                     __end_of_FLASH_WriteBlock:
+   863                           	opt stack 0
+   864                           tblptru	equ	0xFF8
+   865                           tblptrh	equ	0xFF7
+   866                           tblptrl	equ	0xFF6
+   867                           tablat	equ	0xFF5
+   868                           intcon	equ	0xFF2
+   869                           intcon2	equ	0xFF1
+   870                           wreg	equ	0xFE8
+   871                           indf2	equ	0xFDF
+   872                           fsr2h	equ	0xFDA
+   873                           fsr2l	equ	0xFD9
+   874                           
+   875 ;; *************** function _FLASH_EraseBlock *****************
+   876 ;; Defined at:
+   877 ;;		line 132 in file "mcc_generated_files/memory.c"
+   878 ;; Parameters:    Size  Location     Type
+   879 ;;  baseAddr        4    0[COMRAM] unsigned long 
+   880 ;; Auto vars:     Size  Location     Type
+   881 ;;  GIEBitValue     1    4[COMRAM] unsigned char 
+   882 ;; Return value:  Size  Location     Type
+   883 ;;		None               void
+   884 ;; Registers used:
+   885 ;;		wreg, status,2
+   886 ;; Tracked objects:
+   887 ;;		On entry : 0/0
+   888 ;;		On exit  : 0/0
+   889 ;;		Unchanged: 0/0
+   890 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   891 ;;      Params:         4       0       0       0       0       0       0
+   892 ;;      Locals:         1       0       0       0       0       0       0
+   893 ;;      Temps:          0       0       0       0       0       0       0
+   894 ;;      Totals:         5       0       0       0       0       0       0
+   895 ;;Total ram usage:        5 bytes
+   896 ;; Hardware stack levels used:    1
+   897 ;; This function calls:
+   898 ;;		Nothing
+   899 ;; This function is called by:
+   900 ;;		_FLASH_WriteBlock
+   901 ;; This function uses a non-reentrant model
+   902 ;;
+   903                           
+   904                           	psect	text7
+   905  007E52                     __ptext7:
+   906                           	opt stack 0
+   907  007E52                     _FLASH_EraseBlock:
+   908                           	opt stack 28
+   909                           
+   910                           ;memory.c: 133: uint8_t GIEBitValue = INTCONbits.GIE;
+   911                           
+   912                           ;incstack = 0
+   913  007E52  0E00               	movlw	0
+   914  007E54  BEF2               	btfsc	intcon,7,c	;volatile
+   915  007E56  0E01               	movlw	1
+   916  007E58  6E05               	movwf	FLASH_EraseBlock@GIEBitValue,c
+   917                           
+   918                           ;memory.c: 135: TBLPTRU = (uint8_t) ((baseAddr & 0x00FF0000) >> 16);
+   919  007E5A  C003  FFF8         	movff	FLASH_EraseBlock@baseAddr+2,tblptru	;volatile
+   920                           
+   921                           ;memory.c: 136: TBLPTRH = (uint8_t) ((baseAddr & 0x0000FF00) >> 8);
+   922  007E5E  C002  FFF7         	movff	FLASH_EraseBlock@baseAddr+1,tblptrh	;volatile
+   923                           
+   924                           ;memory.c: 137: TBLPTRL = (uint8_t) (baseAddr & 0x000000FF);
+   925  007E62  C001  FFF6         	movff	FLASH_EraseBlock@baseAddr,tblptrl	;volatile
+   926                           
+   927                           ;memory.c: 139: EECON1bits.EEPGD = 1;
+   928  007E66  8EA6               	bsf	4006,7,c	;volatile
+   929                           
+   930                           ;memory.c: 140: EECON1bits.CFGS = 0;
+   931  007E68  9CA6               	bcf	4006,6,c	;volatile
+   932                           
+   933                           ;memory.c: 141: EECON1bits.WREN = 1;
+   934  007E6A  84A6               	bsf	4006,2,c	;volatile
+   935                           
+   936                           ;memory.c: 142: EECON1bits.FREE = 1;
+   937  007E6C  88A6               	bsf	4006,4,c	;volatile
+   938                           
+   939                           ;memory.c: 143: INTCONbits.GIE = 0;
+   940  007E6E  9EF2               	bcf	intcon,7,c	;volatile
+   941                           
+   942                           ;memory.c: 144: EECON2 = 0x55;
+   943  007E70  0E55               	movlw	85
+   944  007E72  6EA7               	movwf	4007,c	;volatile
+   945                           
+   946                           ;memory.c: 145: EECON2 = 0xAA;
+   947  007E74  0EAA               	movlw	170
+   948  007E76  6EA7               	movwf	4007,c	;volatile
+   949                           
+   950                           ;memory.c: 146: EECON1bits.WR = 1;
+   951  007E78  82A6               	bsf	4006,1,c	;volatile
+   952                           
+   953                           ;memory.c: 147: INTCONbits.GIE = GIEBitValue;
+   954  007E7A  B005               	btfsc	FLASH_EraseBlock@GIEBitValue,0,c
+   955  007E7C  D002               	bra	u165
+   956  007E7E  9EF2               	bcf	intcon,7,c	;volatile
+   957  007E80  D001               	bra	u166
+   958  007E82                     u165:
+   959  007E82  8EF2               	bsf	intcon,7,c	;volatile
+   960  007E84                     u166:
+   961  007E84  0012               	return		;funcret
+   962  007E86                     __end_of_FLASH_EraseBlock:
+   963                           	opt stack 0
+   964                           tblptru	equ	0xFF8
+   965                           tblptrh	equ	0xFF7
+   966                           tblptrl	equ	0xFF6
+   967                           tablat	equ	0xFF5
+   968                           intcon	equ	0xFF2
+   969                           intcon2	equ	0xFF1
+   970                           wreg	equ	0xFE8
+   971                           indf2	equ	0xFDF
+   972                           fsr2h	equ	0xFDA
+   973                           fsr2l	equ	0xFD9
+   974                           
+   975 ;; *************** function _FLASH_ReadByte *****************
+   976 ;; Defined at:
+   977 ;;		line 58 in file "mcc_generated_files/memory.c"
+   978 ;; Parameters:    Size  Location     Type
+   979 ;;  flashAddr       4    0[COMRAM] unsigned long 
+   980 ;; Auto vars:     Size  Location     Type
+   981 ;;		None
+   982 ;; Return value:  Size  Location     Type
+   983 ;;                  1    wreg      unsigned char 
+   984 ;; Registers used:
+   985 ;;		wreg, status,2
+   986 ;; Tracked objects:
+   987 ;;		On entry : 0/0
+   988 ;;		On exit  : 0/0
+   989 ;;		Unchanged: 0/0
+   990 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   991 ;;      Params:         4       0       0       0       0       0       0
+   992 ;;      Locals:         0       0       0       0       0       0       0
+   993 ;;      Temps:          0       0       0       0       0       0       0
+   994 ;;      Totals:         4       0       0       0       0       0       0
+   995 ;;Total ram usage:        4 bytes
+   996 ;; Hardware stack levels used:    1
+   997 ;; This function calls:
+   998 ;;		Nothing
+   999 ;; This function is called by:
+  1000 ;;		_main
+  1001 ;;		_FLASH_WriteByte
+  1002 ;; This function uses a non-reentrant model
+  1003 ;;
+  1004                           
+  1005                           	psect	text8
+  1006  007DF0                     __ptext8:
+  1007                           	opt stack 0
+  1008  007DF0                     _FLASH_ReadByte:
+  1009                           	opt stack 29
+  1010                           
+  1011                           ;memory.c: 59: TBLPTRU = (uint8_t) ((flashAddr & 0x00FF0000) >> 16);
+  1012                           
+  1013                           ;incstack = 0
+  1014  007DF0  C003  FFF8         	movff	FLASH_ReadByte@flashAddr+2,tblptru	;volatile
+  1015                           
+  1016                           ;memory.c: 60: TBLPTRH = (uint8_t) ((flashAddr & 0x0000FF00) >> 8);
+  1017  007DF4  C002  FFF7         	movff	FLASH_ReadByte@flashAddr+1,tblptrh	;volatile
+  1018                           
+  1019                           ;memory.c: 61: TBLPTRL = (uint8_t) (flashAddr & 0x000000FF);
+  1020  007DF8  C001  FFF6         	movff	FLASH_ReadByte@flashAddr,tblptrl	;volatile
+  1021  007DFC  0008               	tblrd		*	;# 
+  1022                           
+  1023                           ;memory.c: 65: return (TABLAT);
+  1024  007DFE  50F5               	movf	tablat,w,c	;volatile
+  1025  007E00  0012               	return		;funcret
+  1026  007E02                     __end_of_FLASH_ReadByte:
+  1027                           	opt stack 0
+  1028  0000                     tblptru	equ	0xFF8
+  1029                           tblptrh	equ	0xFF7
+  1030                           tblptrl	equ	0xFF6
+  1031                           tablat	equ	0xFF5
+  1032                           intcon	equ	0xFF2
+  1033                           intcon2	equ	0xFF1
+  1034                           wreg	equ	0xFE8
+  1035                           indf2	equ	0xFDF
+  1036                           fsr2h	equ	0xFDA
+  1037                           fsr2l	equ	0xFD9
+  1038                           tblptru	equ	0xFF8
+  1039                           tblptrh	equ	0xFF7
+  1040                           tblptrl	equ	0xFF6
+  1041                           tablat	equ	0xFF5
+  1042                           intcon	equ	0xFF2
+  1043                           intcon2	equ	0xFF1
+  1044                           wreg	equ	0xFE8
+  1045                           indf2	equ	0xFDF
+  1046                           fsr2h	equ	0xFDA
+  1047                           fsr2l	equ	0xFD9
+  1048                           
+  1049                           	psect	rparam
+  1050  0000                     tblptru	equ	0xFF8
+  1051                           tblptrh	equ	0xFF7
+  1052                           tblptrl	equ	0xFF6
+  1053                           tablat	equ	0xFF5
+  1054                           intcon	equ	0xFF2
+  1055                           intcon2	equ	0xFF1
+  1056                           wreg	equ	0xFE8
+  1057                           indf2	equ	0xFDF
+  1058                           fsr2h	equ	0xFDA
+  1059                           fsr2l	equ	0xFD9
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     29      29
+    BANK0           160     68      69
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    FLASH_WriteBlock@flashWrBufPtr	PTR unsigned char  size(1) Largest target is 64
+		 -> main@Buf(BANK0[64]), 
+
+    FLASH_WriteByte@flashRdBufPtr	PTR unsigned char  size(1) Largest target is 64
+		 -> main@Buf(BANK0[64]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_FLASH_WriteByte
+    _FLASH_WriteByte->_FLASH_WriteBlock
+    _FLASH_WriteBlock->_FLASH_EraseBlock
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                70    70      0    1771
+                                             28 COMRAM     1     1      0
+                                              0 BANK0     68    68      0
+                     _FLASH_ReadByte
+                    _FLASH_WriteByte
+                  _SYSTEM_Initialize
+                            _delayMs
+ ---------------------------------------------------------------------------------
+ (1) _delayMs                                              3     3      0      46
+                                              0 COMRAM     3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _SYSTEM_Initialize                                    0     0      0       0
+              _OSCILLATOR_Initialize
+             _PIN_MANAGER_Initialize
+ ---------------------------------------------------------------------------------
+ (2) _PIN_MANAGER_Initialize                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _OSCILLATOR_Initialize                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _FLASH_WriteByte                                     12     6      6    1355
+                                             16 COMRAM    12     6      6
+                     _FLASH_ReadByte
+                   _FLASH_WriteBlock
+ ---------------------------------------------------------------------------------
+ (2) _FLASH_WriteBlock                                    11     6      5     575
+                                              5 COMRAM    11     6      5
+                   _FLASH_EraseBlock
+ ---------------------------------------------------------------------------------
+ (3) _FLASH_EraseBlock                                     5     1      4     155
+                                              0 COMRAM     5     1      4
+ ---------------------------------------------------------------------------------
+ (2) _FLASH_ReadByte                                       4     0      4     298
+                                              0 COMRAM     4     0      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _FLASH_ReadByte
+   _FLASH_WriteByte
+     _FLASH_ReadByte
+     _FLASH_WriteBlock
+       _FLASH_EraseBlock
+   _SYSTEM_Initialize
+     _OSCILLATOR_Initialize
+     _PIN_MANAGER_Initialize
+   _delayMs
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      16        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0     44      45       4       43.1%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     1D      1D       1       30.5%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      62       9        0.0%
+DATA                 0      0      62      17        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
+Symbol Table                                                                                   Sat Jan 30 15:56:09 2016
+
+                   __CFG_CP0$OFF 000000                     __CFG_CP1$OFF 000000  
+                   __CFG_CP2$OFF 000000                     __CFG_CP3$OFF 000000  
+                            l126 7FFE                              l129 7FD6  
+                            l972 7FC0                              l958 7F9E  
+                            l978 7FD8                     __CFG_CPB$OFF 000000  
+                            u205 7FFC                              u206 7FFE  
+                            u230 7F16                              u165 7E82  
+                            u317 7E0E                              u166 7E84  
+                            u270 7F2A                     __CFG_CPD$OFF 000000  
+               ?_FLASH_WriteByte 0011                              wreg 000FE8  
+                   __CFG_LVP$OFF 000000                             l1000 7E9E  
+                           l1012 7E08                             l1016 7E18  
+                           l1024 7F18                             l1034 7F58  
+                           l1028 7F2C                             _LATA 000F89  
+                           _LATB 000F8A                             _LATC 000F8B  
+                           _LATD 000F8C                             _LATE 000F8D  
+                           _WPUB 000F61                             _flag 00A4  
+                           _main 7EF0                             fsr2h 000FDA  
+                           indf2 000FDF                             fsr2l 000FD9  
+                  __CFG_BORV$190 000000                ?_FLASH_WriteBlock 0006  
+                           start 0000                    __CFG_IESO$OFF 000000  
+             ??_FLASH_WriteBlock 000B                     ___param_bank 000010  
+ __size_of_OSCILLATOR_Initialize 000C    __end_of_OSCILLATOR_Initialize 7DF0  
+                          ?_main 0001                            _LATD0 007C60  
+                 __CFG_DEBUG$OFF 000000                            _TRISA 000F92  
+                          _TRISB 000F93                            _TRISC 000F94  
+                          _TRISD 000F95                            _TRISE 000F96  
+                __end_of_delayMs 7E20                    __CFG_WRT0$OFF 000000  
+                  __CFG_WRT1$OFF 000000                    __CFG_WRT2$OFF 000000  
+                  __CFG_WRT3$OFF 000000                   __CFG_EBTR0$OFF 000000  
+                 __CFG_FCMEN$OFF 000000                   __CFG_EBTR1$OFF 000000  
+                 __CFG_EBTR2$OFF 000000                   __CFG_EBTR3$OFF 000000  
+                  __CFG_WRTB$OFF 000000                    __CFG_WRTC$OFF 000000  
+                  __CFG_WRTD$OFF 000000                   __CFG_EBTRB$OFF 000000  
+             __CFG_MCLRE$EXTMCLR 000000                            status 000FD8  
+                 __CFG_HFOFST$ON 000000                   __CFG_FOSC$HSMP 000000  
+                __initialization 7DDA                     __end_of_main 7F6C  
+        FLASH_ReadByte@flashAddr 0001              FLASH_WriteByte@byte 0016  
+                         ??_main 001D                    __activetblptr 000000  
+        __size_of_FLASH_ReadByte 0012                    main@flashAddr 00A0  
+      FLASH_WriteBlock@writeAddr 0006                           _EECON2 000FA7  
+                         _ANSELA 000F38                           _ANSELB 000F39  
+                         _ANSELC 000F3A                           _ANSELD 000F3B  
+                         _ANSELE 000F3C                   __CFG_WDTEN$OFF 000000  
+                         _TABLAT 000FF5        __size_of_FLASH_EraseBlock 0034  
+                         _OSCCON 000FD3                   __CFG_XINST$OFF 000000  
+                 __CFG_STVREN$ON 000000                        ??_delayMs 0001  
+              _SYSTEM_Initialize 7DD2                       __accesstop 0060  
+        __end_of__initialization 7DDE                  __CFG_PBADEN$OFF 000000  
+             ?_SYSTEM_Initialize 0001                    ___rparam_used 000001  
+               FLASH_WriteByte@i 001C                   __pcstackCOMRAM 0001  
+            ??_SYSTEM_Initialize 0001      FLASH_WriteBlock@GIEBitValue 000F  
+      __end_of_SYSTEM_Initialize 7DDA                       __pbssBANK0 00A4  
+                __CFG_PLLCFG$OFF 000000               __CFG_CCP2MX$PORTC1 000000  
+             __CFG_CCP3MX$PORTB5 000000        __size_of_FLASH_WriteBlock 0094  
+                 _FLASH_ReadByte 7DF0                          _OSCCON2 000FD2  
+                        _TBLPTRH 000FF7                          _TBLPTRL 000FF6  
+                        _TBLPTRU 000FF8                __CFG_PRICLKEN$OFF 000000  
+                        _OSCTUNE 000F9B                 _FLASH_EraseBlock 7E52  
+       __size_of_FLASH_WriteByte 006A                  __CFG_PWRTEN$OFF 000000  
+                        __Hparam 0000                          __Lparam 0000  
+   FLASH_WriteByte@flashRdBufPtr 0015           __end_of_FLASH_ReadByte 7E02  
+                        __pcinit 7DDA                          _delayMs 7E02  
+                        __ramtop 0600                          __ptext0 7EF0  
+                        __ptext1 7E02                          __ptext2 7DD2  
+                        __ptext3 7E20                          __ptext4 7DE4  
+                        __ptext5 7E86                          __ptext6 7F6C  
+                        __ptext7 7E52                          __ptext8 7DF0  
+          _OSCILLATOR_Initialize 7DE4         ??_PIN_MANAGER_Initialize 0001  
+                        main@Buf 0060       __size_of_SYSTEM_Initialize 0008  
+           end_of_initialization 7DDE                  ?_FLASH_ReadByte 0001  
+                      _PORTBbits 000F81                        _PORTDbits 000F83  
+  FLASH_WriteBlock@flashWrBufPtr 000A         FLASH_EraseBlock@baseAddr 0001  
+              FLASH_WriteBlock@i 0010                ??_FLASH_WriteByte 0017  
+               _FLASH_WriteBlock 7F6C           ?_OSCILLATOR_Initialize 0001  
+            start_initialization 7DDA  __size_of_PIN_MANAGER_Initialize 0032  
+  FLASH_WriteByte@blockStartAddr 0018            FLASH_WriteByte@offset 0017  
+    FLASH_EraseBlock@GIEBitValue 0005         __end_of_FLASH_EraseBlock 7E86  
+       FLASH_WriteByte@flashAddr 0011                    __pcstackBANK0 0060  
+         _PIN_MANAGER_Initialize 7E20                         ?_delayMs 0001  
+ FLASH_WriteBlock@blockStartAddr 000B                 ??_FLASH_ReadByte 0005  
+               __CFG_WDTPS$32768 000000                      _INTCON2bits 000FF1  
+                _FLASH_WriteByte 7E86         __end_of_FLASH_WriteBlock 8000  
+                     _EECON1bits 000FA6                         __Hrparam 0000  
+                       __Lrparam 0000               __CFG_BOREN$SBORDIS 000000  
+              __CFG_P2BMX$PORTD2 000000          ??_OSCILLATOR_Initialize 0001  
+               __size_of_delayMs 001E                    __size_of_main 007C  
+                       delayMs@i 0003                      delayMs@time 0002  
+              ?_FLASH_EraseBlock 0001               ??_FLASH_EraseBlock 0005  
+        __end_of_FLASH_WriteByte 7EF0                       _INTCONbits 000FF2  
+        ?_PIN_MANAGER_Initialize 0001                __CFG_T3CMX$PORTC0 000000  
+ __end_of_PIN_MANAGER_Initialize 7E52  

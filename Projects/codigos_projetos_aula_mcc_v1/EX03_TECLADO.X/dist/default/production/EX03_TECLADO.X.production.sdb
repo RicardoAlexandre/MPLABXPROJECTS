@@ -1,0 +1,663 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC LFSROK SPEEDOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K22 ]
+[d frameptr 4065 ]
+"38 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\app.c
+[e E7954 . `uc
+channel_CTMU 29
+channel_DAC 30
+channel_FVRBuf2 31
+]
+"78 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/adc.c
+[e E7855 . `uc
+channel_CTMU 29
+channel_DAC 30
+channel_FVRBuf2 31
+]
+"5 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\app.c
+[v _app app `(v  1 e 0 0 ]
+"54
+[v _UART_Received UART_Received `(v  1 e 0 0 ]
+"86
+[v _processar processar `(v  1 e 0 0 ]
+"464 C:\Program Files\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 C:\Program Files\Microchip\xc8\v1.35\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v1.35\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files\Microchip\xc8\v1.35\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v1.35\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files\Microchip\xc8\v1.35\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v1.35\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files\Microchip\xc8\v1.35\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v1.35\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v1.35\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"3 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\delay.c
+[v _delayMs delayMs `(v  1 e 0 0 ]
+"53 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\main.c
+[v _main main `(v  1 e 0 0 ]
+"58 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+"100
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+"77 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
+"113
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"131
+[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
+"152
+[v _putch putch `(v  1 e 0 0 ]
+"156
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 0 0 ]
+"170
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 0 0 ]
+"52 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 0 0 ]
+"71
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 0 0 ]
+"112 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+"121
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+"50 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+"64 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 0 0 ]
+"89
+[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 0 0 ]
+"123
+[v _TMR0_ISR TMR0_ISR `(v  1 e 0 0 ]
+"148
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 0 0 ]
+"4 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\app.c
+[v _flag flag `uc  1 e 1 0 ]
+"48
+[v _Pot Pot `*.39VEuc  1 e 2 0 ]
+"49
+[v _dta dta `VE[20]uc  1 e 20 0 ]
+"50
+[v _aux aux `VEuc  1 e 1 0 ]
+"49 C:\Program Files\Microchip\xc8\v1.35\include\pic18f45k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"93
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"142
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"192
+[v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
+"253
+[v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
+"2688
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+[s S587 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"6726
+[s S596 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S605 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 AN13 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S614 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 C12IN3M 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2M 1 0 :1:3 
+`uc 1 T5G 1 0 :1:4 
+`uc 1 T1G 1 0 :1:5 
+]
+[s S621 . 1 `uc 1 SRI 1 0 :1:0 
+`uc 1 C12IN3N 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2N 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CCP3 1 0 :1:5 
+]
+[s S628 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CTED1 1 0 :1:2 
+`uc 1 CTED2 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 T3CKI 1 0 :1:5 
+]
+[s S634 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 P3A 1 0 :1:5 
+]
+[s S639 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S642 . 1 `S587 1 . 1 0 `S596 1 . 1 0 `S605 1 . 1 0 `S614 1 . 1 0 `S621 1 . 1 0 `S628 1 . 1 0 `S634 1 . 1 0 `S639 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES642  1 e 1 @3969 ]
+"7776
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"7908
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"8040
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"8172
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"8304
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"8406
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"8627
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8848
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"9069
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"9290
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"9405
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S108 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"9775
+[s S116 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S121 . 1 `S108 1 . 1 0 `S116 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES121  1 e 1 @3997 ]
+[s S468 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"9851
+[s S476 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S481 . 1 `S468 1 . 1 0 `S476 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES481  1 e 1 @3998 ]
+[s S340 . 1 `uc 1 TMR1IP 1 0 :1:0 
+`uc 1 TMR2IP 1 0 :1:1 
+`uc 1 CCP1IP 1 0 :1:2 
+`uc 1 SSP1IP 1 0 :1:3 
+`uc 1 TX1IP 1 0 :1:4 
+`uc 1 RC1IP 1 0 :1:5 
+`uc 1 ADIP 1 0 :1:6 
+]
+"9927
+[s S348 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIP 1 0 :1:3 
+`uc 1 TXIP 1 0 :1:4 
+`uc 1 RCIP 1 0 :1:5 
+]
+[u S353 . 1 `S340 1 . 1 0 `S348 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES353  1 e 1 @3999 ]
+"10698
+[v _RC1STA RC1STA `VEuc  1 e 1 @4011 ]
+[s S144 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"11041
+[s S153 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S156 . 1 `uc 1 RX9D1 1 0 :1:0 
+`uc 1 OERR1 1 0 :1:1 
+`uc 1 FERR1 1 0 :1:2 
+`uc 1 ADDEN1 1 0 :1:3 
+`uc 1 CREN1 1 0 :1:4 
+`uc 1 SREN1 1 0 :1:5 
+`uc 1 RX91 1 0 :1:6 
+`uc 1 SPEN1 1 0 :1:7 
+]
+[s S165 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S168 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S171 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[s S173 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S176 . 1 `S144 1 . 1 0 `S153 1 . 1 0 `S156 1 . 1 0 `S165 1 . 1 0 `S168 1 . 1 0 `S171 1 . 1 0 `S173 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES176  1 e 1 @4011 ]
+"11159
+[v _TX1STA TX1STA `VEuc  1 e 1 @4012 ]
+"11530
+[v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
+"11607
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"11684
+[v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
+"11761
+[v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @4016 ]
+"12732
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @4024 ]
+"13914
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"13984
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"14051
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S877 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"14096
+[s S880 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S884 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S892 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S895 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S898 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S901 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S904 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S907 . 1 `S877 1 . 1 0 `S880 1 . 1 0 `S884 1 . 1 0 `S892 1 . 1 0 `S895 1 . 1 0 `S898 1 . 1 0 `S901 1 . 1 0 `S904 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES907  1 e 1 @4034 ]
+"14181
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"14200
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+[s S253 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"16577
+[s S255 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S258 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S261 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S264 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S267 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S276 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S282 . 1 `S253 1 . 1 0 `S255 1 . 1 0 `S258 1 . 1 0 `S261 1 . 1 0 `S264 1 . 1 0 `S267 1 . 1 0 `S276 1 . 1 0 ]
+[v _RCONbits RCONbits `VES282  1 e 1 @4048 ]
+"16693
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"16749
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"16831
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S817 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"16851
+[s S824 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S828 . 1 `S817 1 . 1 0 `S824 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES828  1 e 1 @4053 ]
+"16906
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"16925
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S37 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"17559
+[s S40 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S49 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S52 . 1 `S37 1 . 1 0 `S40 1 . 1 0 `S49 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES52  1 e 1 @4081 ]
+[s S370 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"17650
+[s S379 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S388 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S405 . 1 `S370 1 . 1 0 `S379 1 . 1 0 `S388 1 . 1 0 `S379 1 . 1 0 `S388 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES405  1 e 1 @4082 ]
+"19023
+[v _LATD0 LATD0 `VEb  1 e 0 @31840 ]
+"354 C:\Program Files\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
+"362
+[v _hexpowers hexpowers `C[4]ui  1 s 8 hexpowers ]
+"369
+[v _octpowers octpowers `C[6]ui  1 s 12 octpowers ]
+"63 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _eusart1TxHead eusart1TxHead `uc  1 s 1 eusart1TxHead ]
+"64
+[v _eusart1TxTail eusart1TxTail `uc  1 s 1 eusart1TxTail ]
+"65
+[v _eusart1TxBuffer eusart1TxBuffer `[8]uc  1 s 8 eusart1TxBuffer ]
+"66
+[v _eusart1TxBufferRemaining eusart1TxBufferRemaining `VEuc  1 e 1 0 ]
+"68
+[v _eusart1RxHead eusart1RxHead `uc  1 s 1 eusart1RxHead ]
+"69
+[v _eusart1RxTail eusart1RxTail `uc  1 s 1 eusart1RxTail ]
+"70
+[v _eusart1RxBuffer eusart1RxBuffer `[8]uc  1 s 8 eusart1RxBuffer ]
+"71
+[v _eusart1RxCount eusart1RxCount `VEuc  1 e 1 0 ]
+"52 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/tmr0.c
+[v _TimerCallBackON TimerCallBackON `VEuc  1 e 1 0 ]
+"57
+[v _timer0ReloadVal16bit timer0ReloadVal16bit `VEui  1 e 2 0 ]
+"53 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"90
+} 0
+"5 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\app.c
+[v _app app `(v  1 e 0 0 ]
+{
+"38
+[v app@adcRes adcRes `ui  1 a 2 0 ]
+"30
+[v app@rec rec `uc  1 a 1 2 ]
+"44
+} 0
+"464 C:\Program Files\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+[v printf@f f `*.31Cuc  1 a 1 wreg ]
+"1500
+[v printf@idx idx `uc  1 a 1 20 ]
+"508
+[v printf@flag flag `us  1 a 2 37 ]
+"501
+[v printf@width width `i  1 a 2 34 ]
+"528
+[v printf@val val `ui  1 a 2 30 ]
+"529
+[v printf@len len `ui  1 a 2 27 ]
+"499
+[v printf@c c `c  1 a 1 36 ]
+"506
+[v printf@prec prec `c  1 a 1 33 ]
+"466
+[v printf@ap ap `[1]*.30v  1 a 1 29 ]
+"530
+[v printf@cp cp `*.30Cuc  1 a 1 25 ]
+"464
+[v printf@f f `*.31Cuc  1 a 1 wreg ]
+"533
+[v printf@f f `*.31Cuc  1 a 1 32 ]
+"1541
+} 0
+"152 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _putch putch `(v  1 e 0 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 3 ]
+"154
+} 0
+"131
+[v _EUSART1_Write EUSART1_Write `(v  1 e 0 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 2 ]
+"146
+} 0
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 4 ]
+"15
+} 0
+"15 C:\Program Files\Microchip\xc8\v1.35\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 6 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 2 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
+"53
+} 0
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 9 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 11 ]
+"26
+} 0
+"8 C:\Program Files\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 7 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 4 ]
+"31
+} 0
+"3 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\delay.c
+[v _delayMs delayMs `(v  1 e 0 0 ]
+{
+"5
+[v delayMs@i i `ui  1 a 2 5 ]
+"3
+[v delayMs@time time `ui  1 p 2 2 ]
+"9
+} 0
+"54 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\app.c
+[v _UART_Received UART_Received `(v  1 e 0 0 ]
+{
+[v UART_Received@rec rec `uc  1 a 1 wreg ]
+[v UART_Received@rec rec `uc  1 a 1 wreg ]
+"57
+[v UART_Received@rec rec `uc  1 a 1 4 ]
+"82
+} 0
+"86
+[v _processar processar `(v  1 e 0 0 ]
+{
+"103
+} 0
+"113 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"114
+[v EUSART1_Read@readValue readValue `uc  1 a 1 2 ]
+"129
+} 0
+"100 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E7855  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E7855  1 a 1 wreg ]
+"102
+[v ADC_GetConversion@channel channel `E7855  1 a 1 6 ]
+"117
+} 0
+"112 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
+{
+"119
+} 0
+"64 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 0 0 ]
+{
+"87
+} 0
+"89
+[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 0 0 ]
+{
+"92
+} 0
+"50 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 0 0 ]
+{
+"75
+} 0
+"121 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 0 0 ]
+{
+"130
+} 0
+"52 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 0 0 ]
+{
+"69
+} 0
+"77 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 0 0 ]
+{
+"111
+} 0
+"58 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 0 0 ]
+{
+"76
+} 0
+"71 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 0 0 ]
+{
+"82
+} 0
+"123 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 0 0 ]
+{
+"124
+[v TMR0_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"144
+} 0
+"148
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 0 0 ]
+{
+"152
+} 0
+"156 C:\Users\Microgenios\Desktop\MCC\EX03_TECLADO.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 0 0 ]
+{
+"168
+} 0
+"170
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 0 0 ]
+{
+"184
+} 0
