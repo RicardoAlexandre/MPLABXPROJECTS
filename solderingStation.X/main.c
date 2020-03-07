@@ -21,6 +21,8 @@ void main(void) {
     
     while (1) {
         
+        __delay_ms(500);
+        
         adcValue = readADC(0);
         
         if(adcValue > 500){

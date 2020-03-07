@@ -44,6 +44,8 @@ void adcInit(){
     ADCON0bits.ADON = 0;    //ADC module is off
     ADCON1bits.PCFG = 0b1110; //RA1 as analog pin VDD VSS as reference
     
+    __delay_us(25);
+    
 }
 
 uint16_t readADC(uint8_t adc_channel){
@@ -51,12 +53,12 @@ uint16_t readADC(uint8_t adc_channel){
     ADCON0bits.CHS = adc_channel;
     ADCON0bits.ADON = 1;  
     
-    __delay_us(25);
+    __delay_us(10);
     
     ADCON0bits.GO =1;
     
     while(ADCON0bits.nDONE){
-        reurn ((ADRESH<<8)+ADRESL);
+        return ((ADRESH<<8)+ADRESL);
     }
     
 }
