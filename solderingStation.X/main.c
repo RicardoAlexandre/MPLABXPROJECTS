@@ -8,31 +8,35 @@
 #include <stdint.h>
 #include <pic16f877a.h>
 #include <pic.h>
+#include <stdio.h>
 #include "main.h"
 
 void main(void) {
     
+    char text[16];
     systemInit();
     adcInit();
     
+    LCD_Begin();
+        
+    
     __delay_ms(10);
     
-    uint16_t adcValue = 0;
+    int adc_Value = 0;
+    
     
     while (1) {
         
-        __delay_ms(500);
+        adc_Value = readADC(0);
+        LCD_Cmd(LCD_CLEAR);
+        LCD_Goto(1,1);
         
-        adcValue = readADC(0);
+       sprintf(text,"ADC: %d",adc_Value);
         
-        if(adcValue > 500){
-            
-            PORTDbits.RD0 =1;
-        }else{
-            PORTDbits.RD0 = 0;
-        }    
+       LCD_Print(text);
+        __delay_ms(1000);
+        
 
     }
-
-    
 }
+    

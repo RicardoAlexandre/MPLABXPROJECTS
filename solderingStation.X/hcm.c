@@ -30,11 +30,11 @@
 void systemInit(){
     
     TRISD = 0b00000000;
+    PORTD = 0x00;
     TRISA = 0b00000001;
     
     
 }
-
 
 void adcInit(){
     
@@ -48,8 +48,8 @@ void adcInit(){
     
 }
 
-uint16_t readADC(uint8_t adc_channel){
-    
+int readADC(uint8_t adc_channel){
+    int valueADC = 0;
     ADCON0bits.CHS = adc_channel;
     ADCON0bits.ADON = 1;  
     
@@ -57,8 +57,9 @@ uint16_t readADC(uint8_t adc_channel){
     
     ADCON0bits.GO =1;
     
-    while(ADCON0bits.nDONE){
-        return ((ADRESH<<8)+ADRESL);
-    }
+    while(ADCON0bits.nDONE)  
     
+        
+                 valueADC = ((ADRESH<<8)+ADRESL);
+                 return valueADC;         
 }
