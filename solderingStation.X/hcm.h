@@ -19,5 +19,13 @@ void adcInit(void);
 
 int readADC(uint8_t);
 
+void tmr0Init();
+
+void tmr1Init();
+
+void pwm1Init();
+
+int dutyCiclePWM1(int);
+
 #endif	
 

@@ -11,10 +11,20 @@
 #include <stdio.h>
 #include "main.h"
 
+ int tmr1Count = 0;
+ 
 void interrupt interruption(){
         
-        if(INTCONbits.T0IF){
-            INTCONbits.T0IF =0;
+   //Timer 1 overflow 104ms
+    
+        if(PIR1bits.TMR1IF == 1){
+            PIR1bits.TMR1IF =0;
+           tmr1Count ++;
+           
+           if(tmr1Count == 4){
+               PORTCbits.RC2 = !PORTCbits.RC2;
+               tmr1Count = 0;
+           }
             
         }
 }
@@ -24,6 +34,7 @@ void main(void) {
     char text[16];
     systemInit();
     adcInit();
+    tmr1Init();
     
     LCD_Begin();
         
