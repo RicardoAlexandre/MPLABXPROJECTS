@@ -11,6 +11,14 @@
 #include <stdio.h>
 #include "main.h"
 
+void interrupt interruption(){
+        
+        if(INTCONbits.T0IF){
+            INTCONbits.T0IF =0;
+            
+        }
+}
+
 void main(void) {
     
     char text[16];
@@ -23,6 +31,8 @@ void main(void) {
     __delay_ms(10);
     
     int adc_Value = 0;
+    
+    
     
     
     while (1) {

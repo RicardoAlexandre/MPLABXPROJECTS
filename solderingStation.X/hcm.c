@@ -16,13 +16,7 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-#include <xc.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <pic.h>
 
-#include<pic16f877a.h>
 
 #include "hcm.h"
 
@@ -31,9 +25,9 @@ void systemInit(){
     
     TRISD = 0b00000000;
     PORTD = 0x00;
-    TRISA = 0b00000001;
-    
-    
+    TRISA = 0b00000001;   
+    INTCONbits.GIE = 1;  //Enable global interruption
+  
 }
 
 void adcInit(){
@@ -62,4 +56,25 @@ int readADC(uint8_t adc_channel){
         
                  valueADC = ((ADRESH<<8)+ADRESL);
                  return valueADC;         
+}
+
+void tmr0Init(){
+    
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.T0SE = 0;
+    OPTION_REGbits.PSA = 1;
+    OPTION_REGbits.PS = 0b111;
+    INTCONbits.TMR0IE =1;
+   
+    
+}
+
+void tmr1Init(){
+    
+    PIE1bits.TMR1IE = 1;
+    
+    T1CONbits.T1CKPS = 0b11;
+    T1CONbits.TMR1CS = 0;
+    T1CONbits.TMR1ON = 1;
+    
 }

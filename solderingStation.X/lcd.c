@@ -1,8 +1,7 @@
 #include "lcd.h"
-#include <pic.h>
+#include "hcm.h"
 
-#define _XTAL_FREQ  20000000
-#include<pic16f877a.h>
+
 
 
 void LCD_Write_Nibble(uint8_t n)
