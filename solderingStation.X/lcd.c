@@ -2,8 +2,6 @@
 #include "hcm.h"
 
 
-
-
 void LCD_Write_Nibble(uint8_t n)
 {
   LCD_RS = RS;

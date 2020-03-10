@@ -71,10 +71,20 @@ void tmr0Init(){
 
 void tmr1Init(){
     
-    PIE1bits.TMR1IE = 1;
+    PIE1bits.TMR1IE = 1;     //Enable interrupt by Timer 1
     
-    T1CONbits.T1CKPS = 0b11;
-    T1CONbits.TMR1CS = 0;
-    T1CONbits.TMR1ON = 1;
+    T1CONbits.T1CKPS = 0b11; //Prescale 1:8
+    T1CONbits.TMR1CS = 0;    //Internal clock (FOSC/4)
+    T1CONbits.TMR1ON = 1;    //Enable Timer1
+    
+    /*
+     _XTAL_FREQ 20000000 // cristal 20Mhz
+     Timer 1 calculation
+     (FOSC/4)/8
+     (20Mhz/4)/8 = 5Mhz/8 = 625Khz
+     1/625x10^3 = 0,000.001.6
+     1,6usx2^16 = 0,0000016x65535 = 0,104856
+     time overflow = 104,856ms
+     */
     
 }
