@@ -28,7 +28,7 @@ void LCD_Cmd(uint8_t Command)
     __delay_ms(2);
 }
 
-void LCD_Goto(uint8_t col, uint8_t row)
+void LCD_Goto(uint8_t row, uint8_t col)
 {
   switch(row)
   {

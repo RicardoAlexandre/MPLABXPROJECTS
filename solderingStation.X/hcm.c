@@ -26,6 +26,7 @@ void systemInit(){
     TRISD = 0b00000000;
     PORTD = 0x00;
     TRISA = 0b00000001;   
+    TRISB = 0b11111111; 
     TRISC = 0b00000000;
     PORTC = 0x00;
     
@@ -64,20 +65,19 @@ int readADC(uint8_t adc_channel){
 
 void tmr0Init(){
     
+    INTCONbits.TMR0IE =1;
+    
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.T0SE = 0;
     OPTION_REGbits.PSA = 1;
     OPTION_REGbits.PS = 0b111;
-    INTCONbits.TMR0IE =1;
-   
-    
 }
 
 void tmr1Init(){
     
     PIE1bits.TMR1IE = 1;     //Enable interrupt by Timer 1
     
-    T1CONbits.T1CKPS = 0b11; //Prescale 1:8
+    T1CONbits.T1CKPS = 0b00; //Prescale 1:1
     T1CONbits.T1OSCEN = 0;   // TMR1 external oscillator off
     T1CONbits.TMR1CS = 0;    //Internal clock (FOSC/4)
     T1CONbits.TMR1ON = 1;    //Enable Timer1
@@ -97,10 +97,34 @@ void tmr1Init(){
      */ 
 }
 
+void tmr2Init(){
+    
+    //PIE1bits.TMR2IE = 1;  //to use as PWM "generator", disable the interruption
+    
+    T2CONbits.TOUTPS = 0b0000; //Postscale 1:1
+    T2CONbits.TMR2ON = 1;     // Enable Timer 2;
+    T2CONbits.T2CKPS = 0b10; //Prescale 1:16
+    
+    PR2 = 0xFF;
+    
+}
+
 void pwm1Init(){
+    
+    CCP1CONbits.CCP1M = 0b1100; // PWM mode enable
+    CCPR1L = 0;
     
 }
 
 int dutyCiclePWM1(int dutyCicle){
     
+    if(dutyCicle > 255){
+        dutyCicle = 255;
+    }
+    
+    if(dutyCicle < 0){
+        dutyCicle = 0;
+    }
+    
+    CCPR1L = dutyCicle;
 }

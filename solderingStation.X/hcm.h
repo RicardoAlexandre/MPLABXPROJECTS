@@ -23,6 +23,8 @@ void tmr0Init();
 
 void tmr1Init();
 
+void tmr2Init();
+
 void pwm1Init();
 
 int dutyCiclePWM1(int);
